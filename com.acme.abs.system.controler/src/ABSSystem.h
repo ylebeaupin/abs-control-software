@@ -4,7 +4,7 @@
 	Component	: ABSSystemComponent 
 	Configuration 	: ABSConfig
 	Model Element	: ABSSystem
-//!	Generated Date	: Fri, 28, Sep 2018  
+//!	Generated Date	: Mon, 1, Oct 2018  
 	File Path	: ABSSystemComponent\ABSConfig\ABSSystem.h
 *********************************************************************/
 
@@ -906,11 +906,6 @@ public :
     
     //## auto_generated
     ~ABSSystem();
-    
-    ////    Operations    ////
-    
-    //## operation Reset()
-    void Reset();
     
     ////    Additional operations    ////
     

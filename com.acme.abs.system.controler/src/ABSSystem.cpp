@@ -4,7 +4,7 @@
 	Component	: ABSSystemComponent 
 	Configuration 	: ABSConfig
 	Model Element	: ABSSystem
-//!	Generated Date	: Fri, 28, Sep 2018  
+//!	Generated Date	: Mon, 1, Oct 2018  
 	File Path	: ABSSystemComponent\ABSConfig\ABSSystem.cpp
 *********************************************************************/
 
@@ -282,6 +282,18 @@ IOxfReactive::TakeEventStatus ABSSystem::ABSController::rootState_processEvent()
                             rootState_active = ABSFailed;
                             res = eventConsumed;
                         }
+                }
+            
+        }
+        break;
+        // State ABSFailed
+        case ABSFailed:
+        {
+            if(IS_EVENT_TYPE_OF(Reset_ABSSystem_id))
+                {
+                    rootState_subState = Idle;
+                    rootState_active = Idle;
+                    res = eventConsumed;
                 }
             
         }
@@ -806,11 +818,6 @@ ABSSystem::ABSSystem(IOxfActive* theActiveContext) {
 }
 
 ABSSystem::~ABSSystem() {
-}
-
-void ABSSystem::Reset() {
-    //#[ operation Reset()
-    //#]
 }
 
 ABSSystem::ABSController* ABSSystem::getTheABSController() const {
